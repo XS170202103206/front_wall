@@ -1,0 +1,16 @@
+<div class="main">
+    <!--背景笼罩层-->
+    <!-- <div [ngClass]="{'background-cover-welcome': true, 'animated fadeOut': welcomeHideWithAnimation}"></div> -->
+    <!-- 欢迎 -->
+    <div [ngClass]="{'container-welcome': true}">
+        <img class="image-welcome" src="../../../assets/images/welcome-1.png"/>
+        <div class="container-word">
+            <div *ngIf="!isFirstIn" class="words-welcome"><p>欢迎来到北理表白墙，</p></div>
+            <div *ngIf="!isFirstIn" class="words-welcome"><p>让我们开始大声说吧!</p></div>
+            <input *ngIf="isFirstIn" id="formUsername" [(ngModel)]="user.formUsername" class="input" maxlength='17' placeholder="用户名(仅字母数字)" title="以字母数字下划线组成" onkeyup="value=value.replace(/[^\d|chun]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"><br/> 
+            <input *ngIf="isFirstIn" id="formPassword" [(ngModel)]="user.formPassword" class="input" maxlength='17' placeholder="密码" type="password">
+            <div *ngIf="isFirstIn" class="forgetPassword" (click)="forgetPassword()">忘记密码？</div>
+        </div>
+        <div (click)="start()" class="bottom">SAY</div>
+    </div>
+</div>

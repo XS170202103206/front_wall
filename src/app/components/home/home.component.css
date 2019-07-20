@@ -1,0 +1,51 @@
+.top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    height: fit-content;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    background-color: #a2c6db;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: aqua */
+}
+
+.img{
+    width: 100%;
+    height: auto;
+}
+
+.tabbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
+    height: fit-content;
+    margin-top: 20px;
+    /* background-color: bisque */
+}
+
+.item-tab{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 20%;
+    height: 55px;
+}
+
+.icon-tab{
+    height: 30px;
+    width: auto;
+}
+
+.text-tab{
+    margin-top: 5px;
+    align-self: inherit;
+    font-size: 12px;
+}

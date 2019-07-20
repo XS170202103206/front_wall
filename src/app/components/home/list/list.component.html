@@ -1,0 +1,49 @@
+<div id='div' [ngClass]="{'main': true, 'animated fadeIn': true}">
+    <!-- 主页 -->
+    <div class="item" *ngFor="let item of list; let i = index;">
+        <div class="left-item">
+            <img *ngIf="item.sex == '2'" class="userFace-content" src="../../../assets/images/userFace-boy.jpg">
+            <img *ngIf="item.sex == '1'" class="userFace-content" src="../../../assets/images/userFace-girl.jpg">
+        </div>
+        <div class="right-item">
+            <div class="nameAndTime">
+                <div class="nickname">{{item.nickname}}</div>
+                <div class="postTime">{{item.createtime}}</div>
+            </div>
+            <div class="content">
+                {{item.content}}
+            </div>
+            <div style="margin-top: 5px; width: 100%; height:1px; background-color: #a2c6db;"></div>
+            <div class="likeAndComment">
+                <img data-id="{{item.content_id}}" (click)="like($event, i)" class="icon-heart"
+                    *ngIf="likeFlagArr[item.content_id]" src="../../../assets/images/heart-pink.png">
+                <img data-id="{{item.content_id}}" (click)="like($event, i)" class="icon-heart"
+                    *ngIf="!likeFlagArr[item.content_id]" src="../../../assets/images/heart.png">
+                <div class="likeOrCommentCountText">{{item.likecount}}</div>
+                <img data-id="{{item.content_id}}" (click)="comment($event, i)" class="icon-comment"
+                    src="../../../assets/images/comment.png">
+                <div class="likeOrCommentCountText">{{item.count_p}}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="list.length == '0'" class="blank">这里怎么什么都没有(ಥ_ಥ)</div>
+    <div *ngIf="isAll" class="line">---这已经是我的底线啦---</div>
+    <!-- 加载动画 -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet" />
+    <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+    <script src="/follow.js" type="text/javascript"></script>
+    <div class="loading" id="loading">
+        <div class="spinner spinnerTwo"><span></span></div>
+    </div>
+    <!-- <button  (click)="test()">加载更多...</button> -->
+    <!-- fab -->
+    <img (click)="newMsg()" class="icon-input" src="../../../assets/images/plus-1.png" />
+    <!-- 评论弹窗 -->
+    <div id="comment" *ngIf="showComment" class="comment" (click)="test($event)">
+        <input [(ngModel)]="commentInput" class="input-comment" type="text" autofocus placeholder="说点什么吧...">
+        <div [ngStyle]="{'color': commentInput.length === 0 ? '#ccc' : ''}" class="send" (click)="send()">发表</div>
+        <div class="send" (click)="cancelComment()">取消</div>
+    </div>
+    <!-- 背景遮罩 -->
+    <!-- <div *ngIf="showComment" [ngStyle]="{'height': myHeight}" [ngClass]="{'background-cover': true}"></div> -->
+</div>

@@ -1,0 +1,12 @@
+<div class="top" id="top">
+    <img id="img" class="img" src="../../../assets/images/welcome-1.png">
+    <div class="tabbar">
+        <div [ngStyle]="{'border-bottom': currentTab == i ? 'solid 2px #c19d97': ''}" id='{{i}}' *ngFor="let item of items; let i=index" (click)="tab($event)" class="item-tab">
+            <img id='{{i}}' *ngIf="currentTab != i" class="icon-tab" src="{{item.unselected}}">
+            <img id='{{i}}' *ngIf="currentTab == i" class="icon-tab" src="{{item.selected}}">
+            <div id='{{i}}' [ngStyle]="{'color': currentTab == i ? '#c19d97': ''}" class="text-tab">{{item.name}}</div>
+        </div>
+    </div>
+</div>
+<div [ngStyle]="{'height': myHeight, 'width': '100%'}"></div>
+<router-outlet></router-outlet>

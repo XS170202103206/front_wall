@@ -1,0 +1,30 @@
+<div [ngClass]="{'main': true, 'animated fadeIn': true}">
+    <div class="item" *ngFor="let item of array; let i = index;">
+            <div class="top">
+                <div class="userFaceAndNicknameAndTime">
+                    <img *ngIf="item.sex == 2" class="userFace-content" src="../../../../assets/images/userFace-boy.jpg">
+                    <img *ngIf="item.sex == 1" class="userFace-content" src="../../../../assets/images/userFace-girl.jpg">
+                    <img *ngIf="item.sex == 0" class="userFace-content" src="../../../../assets/images/userFace.jpg">
+                    <div class="nicknameAndTime">
+                        <div style="font-size: 12px; font-weight: bold">{{item.nickname}}</div>
+                        <div style="font-size: 12px;">{{item.createtime}}</div>
+                    </div>
+                </div>
+                <img (click)="read($event, i)" id="{{item.comment_id}}" class="icon-read" src="../../../../assets/images/read.png">
+            </div>
+            <div class="comment">
+                {{item.comment}}
+            </div>
+            <div class="content">
+                {{item.content}}
+            </div>
+    </div>
+    <div *ngIf="array.length == '0'" class="blank">这里怎么什么都没有(╥╯^╰╥)</div>
+    <!-- 加载动画 -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet" />
+    <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+    <script src="/follow.js" type="text/javascript"></script>
+    <div class="loading" id="loading">
+        <div class="spinner spinnerTwo"><span></span></div>
+    </div>
+</div>

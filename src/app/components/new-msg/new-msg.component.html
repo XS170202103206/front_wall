@@ -1,0 +1,31 @@
+<!--背景笼罩层-->
+<!-- <div (click)="clickCover()" [ngClass]="{'background-cover': true}"> -->
+    <!-- 新内容 -->
+<!-- <img class="icon-close" src="../../../assets/images/close.png"> -->
+<img [ngClass]="{'topImage': true, 'animated fadeIn': showNewMsgWithAnimation}" src="../../../assets/images/background-input.png">
+<div [ngClass]="{'container-newMsg': true, 'animated fadeIn': showNewMsgWithAnimation}">
+        <div class="nicknameAndClose">
+            <input class="input-nickname" id="nickname" [(ngModel)]="newMsg.NickName" type="text" placeholder="起个1~5个字的昵称">
+            <div class="container-icon">
+                <img (click)="close()" class="icon-close" src="../../../assets/images/close.png" alt="">
+            </div>
+        </div>
+        <textarea class="textarea-content" id="content" [(ngModel)]="newMsg.Content" cols="30" rows="4" placeholder="北鼻想说什么呢~"></textarea>
+        <div class="sexAndSubmit">
+            <div class="sex">
+                <div class="sex-item">
+                    <img (click)="chooseSex($event)" id="2" *ngIf="sex" class="icon-radioButton" src="../../../assets/images/radioButton-colorful.png">
+                    <img (click)="chooseSex($event)" id="2" *ngIf="!sex" class="icon-radioButton" src="../../../assets/images/radioButton-gray.png">
+                    <div style="color: white">男</div>
+                    <img class="icon-userFace" src="../../../assets/images/userFace-boy.jpg">
+                </div>
+                <div class="sex-item">
+                    <img (click)="chooseSex($event)" id="1" *ngIf="!sex" class="icon-radioButton" src="../../../assets/images/radioButton-colorful.png">
+                    <img (click)="chooseSex($event)" id="1" *ngIf="sex" class="icon-radioButton" src="../../../assets/images/radioButton-gray.png">
+                    <div style="color: white">女</div>
+                    <img class="icon-userFace" src="../../../assets/images/userFace-girl.jpg">
+                </div>
+            </div>
+            <div class="submit" (click)="submit()">发布</div>
+        </div>
+</div>

@@ -1,0 +1,7 @@
+{
+    "/": {
+      "target": "https://myzhbit.cn/",
+      "changeOrigin": true, 
+      "logLevel": "debug" 
+    }
+}

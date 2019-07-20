@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./libs/animate.css";
+body{
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    font: normal 100%/1.4 noto;
+    font-size: 14px;
+    color: #2c3e50;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-size:cover;
+    background-attachment:fixed;
+    background: url(assets/images/background-1.png)no-repeat fixed center top;
+    /* background-color: #ccc; */
+    margin: 0;
+}
+
+.spinner {
+    border-radius: 50%;
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+  }
+
+  .spinnerTwo:before {
+    position: absolute;
+    top: 15px;
+    left: 13.75px;
+    content: "";
+    height: 17.5px;
+    width: 2.5px;
+    background-color: #535657;
+    transform-origin: 50% 0%;
+    border-radius: 8px;
+    animation: clockmin 2s linear infinite;
+  }
+  .spinnerTwo:after {
+    position: absolute;
+    content: "";
+    height: 17.5px;
+    width: 1px;
+    top: 15px;
+    left: 19.5px;
+    transform-origin: 50% 0%;
+    /* background-color: #D1462F; */
+    border-radius: 2px;
+    animation: clocksec 0.5s linear infinite;
+  }
+  .spinnerTwo span {
+    position: absolute;
+    top: 5px;
+    left: 13.75px;
+    height: 10px;
+    width: 2.5px;
+    border-radius: 2px;
+    background: #535657;
+    transform-origin: 50% 100%;
+    animation: clockhour 10s linear infinite;
+  }
+  
+  @keyframes clockhour {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes clockmin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes clocksec {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
